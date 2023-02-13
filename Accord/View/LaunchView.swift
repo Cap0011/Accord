@@ -39,6 +39,7 @@ struct LaunchView: View {
                 MyButton(backgroundColorName: "BoxGrey", textColorName: "White", text: "Log In")
                     .padding(.top, 10)
             }
+            .padding(.horizontal, 20)
             .padding(.top, 50)
             .foregroundColor(.white)
         }

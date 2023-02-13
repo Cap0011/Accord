@@ -17,7 +17,6 @@ struct MyButton: View {
             RoundedRectangle(cornerRadius: 4)
                 .foregroundColor(Color(backgroundColorName))
                 .frame(height: 48)
-                .padding(.horizontal, 20)
             
             Text(text)
                 .foregroundColor(Color(textColorName))

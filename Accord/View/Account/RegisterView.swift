@@ -21,6 +21,7 @@ struct RegisterView: View {
                 Text("Register")
                     .foregroundColor(.white)
                     .font(.montserrat(.bold, size: 24))
+                    .padding(.top, 10)
                 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("PICK A NICKNAME")

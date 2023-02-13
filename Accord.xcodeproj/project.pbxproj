@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C703F00E299AA23E00572927 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703F00D299AA23E00572927 /* ProfilesView.swift */; };
+		C703F011299AA62B00572927 /* FriendRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703F010299AA62B00572927 /* FriendRequestView.swift */; };
 		C71B2BA729914CDA002871F5 /* AccordApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BA629914CDA002871F5 /* AccordApp.swift */; };
 		C71B2BA929914CDA002871F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BA829914CDA002871F5 /* ContentView.swift */; };
 		C71B2BAB29914CDB002871F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71B2BAA29914CDB002871F5 /* Assets.xcassets */; };
 		C71B2BAE29914CDB002871F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71B2BAD29914CDB002871F5 /* Preview Assets.xcassets */; };
 		C71B2BB529914DBD002871F5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BB429914DBD002871F5 /* MainView.swift */; };
 		C71B2BB729914DFE002871F5 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BB629914DFE002871F5 /* FriendsListView.swift */; };
-		C71B2BB929914E1B002871F5 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BB829914E1B002871F5 /* ProfileSettingView.swift */; };
 		C71B2BBC299A7988002871F5 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BBB299A7988002871F5 /* LaunchView.swift */; };
 		C71B2BBF299A89EF002871F5 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C71B2BBE299A89EF002871F5 /* Montserrat-Regular.otf */; };
 		C71B2BC1299A8A00002871F5 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C71B2BC0299A8A00002871F5 /* Montserrat-Medium.otf */; };
@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		C703F00D299AA23E00572927 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
+		C703F010299AA62B00572927 /* FriendRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestView.swift; sourceTree = "<group>"; };
 		C71B2BA329914CDA002871F5 /* Accord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71B2BA629914CDA002871F5 /* AccordApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordApp.swift; sourceTree = "<group>"; };
 		C71B2BA829914CDA002871F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		C71B2BAD29914CDB002871F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C71B2BB429914DBD002871F5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C71B2BB629914DFE002871F5 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
-		C71B2BB829914E1B002871F5 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		C71B2BBB299A7988002871F5 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		C71B2BBE299A89EF002871F5 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		C71B2BC0299A8A00002871F5 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
@@ -67,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C703F00F299AA5F600572927 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				C71B2BB629914DFE002871F5 /* FriendsListView.swift */,
+				C703F010299AA62B00572927 /* FriendRequestView.swift */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
 		C71B2B9A29914CDA002871F5 = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +121,7 @@
 				C71B2BA829914CDA002871F5 /* ContentView.swift */,
 				C71B2BD5299A9A54002871F5 /* Account */,
 				C71B2BB429914DBD002871F5 /* MainView.swift */,
-				C71B2BB629914DFE002871F5 /* FriendsListView.swift */,
-				C71B2BB829914E1B002871F5 /* ProfileSettingView.swift */,
+				C703F00F299AA5F600572927 /* Friend */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,8 +254,8 @@
 				C71B2BD4299A9805002871F5 /* MySecureInputForm.swift in Sources */,
 				C71B2BB729914DFE002871F5 /* FriendsListView.swift in Sources */,
 				C703F00E299AA23E00572927 /* ProfilesView.swift in Sources */,
+				C703F011299AA62B00572927 /* FriendRequestView.swift in Sources */,
 				C71B2BA729914CDA002871F5 /* AccordApp.swift in Sources */,
-				C71B2BB929914E1B002871F5 /* ProfileSettingView.swift in Sources */,
 				C71B2BD9299A9CAD002871F5 /* SetProfilePictureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

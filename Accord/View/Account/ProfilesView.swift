@@ -14,7 +14,7 @@ struct ProfilesView: View {
     @State private var selectedImageData: Data?
     
     @State private var nickname: String?
-    @State private var number: Int?
+    @State private var number: String?
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -46,7 +46,7 @@ struct ProfilesView: View {
                 HStack(spacing: 0) {
                     Text(nickname ?? "VI")
                     Text(" #")
-                    Text(String(number ?? 1105))
+                    Text(String(number ?? "1105"))
                     
                     Image(systemName: "pencil.circle.fill")
                         .padding(.leading, 10)

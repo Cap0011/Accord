@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C703F00E299AA23E00572927 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703F00D299AA23E00572927 /* ProfilesView.swift */; };
 		C71B2BA729914CDA002871F5 /* AccordApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BA629914CDA002871F5 /* AccordApp.swift */; };
 		C71B2BA929914CDA002871F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BA829914CDA002871F5 /* ContentView.swift */; };
 		C71B2BAB29914CDB002871F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71B2BAA29914CDB002871F5 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C703F00D299AA23E00572927 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
 		C71B2BA329914CDA002871F5 /* Accord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71B2BA629914CDA002871F5 /* AccordApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordApp.swift; sourceTree = "<group>"; };
 		C71B2BA829914CDA002871F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				C71B2BCF299A8D5F002871F5 /* RegisterView.swift */,
 				C71B2BD6299A9A71002871F5 /* LogInView.swift */,
 				C71B2BD8299A9CAD002871F5 /* SetProfilePictureView.swift */,
+				C703F00D299AA23E00572927 /* ProfilesView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				C71B2BB529914DBD002871F5 /* MainView.swift in Sources */,
 				C71B2BD4299A9805002871F5 /* MySecureInputForm.swift in Sources */,
 				C71B2BB729914DFE002871F5 /* FriendsListView.swift in Sources */,
+				C703F00E299AA23E00572927 /* ProfilesView.swift in Sources */,
 				C71B2BA729914CDA002871F5 /* AccordApp.swift in Sources */,
 				C71B2BB929914E1B002871F5 /* ProfileSettingView.swift in Sources */,
 				C71B2BD9299A9CAD002871F5 /* SetProfilePictureView.swift in Sources */,

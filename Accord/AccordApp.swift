@@ -11,7 +11,7 @@ import SwiftUI
 struct AccordApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SetProfilePictureView()
         }
     }
 }

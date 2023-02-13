@@ -26,6 +26,7 @@
 		C71B2BD2299A9004002871F5 /* MyInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BD1299A9004002871F5 /* MyInputForm.swift */; };
 		C71B2BD4299A9805002871F5 /* MySecureInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BD3299A9805002871F5 /* MySecureInputForm.swift */; };
 		C71B2BD7299A9A71002871F5 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BD6299A9A71002871F5 /* LogInView.swift */; };
+		C71B2BD9299A9CAD002871F5 /* SetProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B2BD8299A9CAD002871F5 /* SetProfilePictureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		C71B2BD1299A9004002871F5 /* MyInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInputForm.swift; sourceTree = "<group>"; };
 		C71B2BD3299A9805002871F5 /* MySecureInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecureInputForm.swift; sourceTree = "<group>"; };
 		C71B2BD6299A9A71002871F5 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		C71B2BD8299A9CAD002871F5 /* SetProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfilePictureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				C71B2BBB299A7988002871F5 /* LaunchView.swift */,
 				C71B2BCF299A8D5F002871F5 /* RegisterView.swift */,
 				C71B2BD6299A9A71002871F5 /* LogInView.swift */,
+				C71B2BD8299A9CAD002871F5 /* SetProfilePictureView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				C71B2BB729914DFE002871F5 /* FriendsListView.swift in Sources */,
 				C71B2BA729914CDA002871F5 /* AccordApp.swift in Sources */,
 				C71B2BB929914E1B002871F5 /* ProfileSettingView.swift in Sources */,
+				C71B2BD9299A9CAD002871F5 /* SetProfilePictureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

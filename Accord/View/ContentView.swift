@@ -8,19 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var authModel: AuthViewModel
+    
     var body: some View {
-        TabView {
-            MainView()
-                .tabItem {
-                    Image(systemName: "sun.haze.fill")
-                }
-            FriendsListView()
-                .tabItem {
-                    Image(systemName: "person.3")
-                }
-            SetProfilePictureView()
-                .tabItem {
-                    Image(systemName: "person.circle.fill")
+        if let user = authModel.user {
+            TabView {
+                MainView()
+                    .tabItem {
+                        Image(systemName: "sun.haze.fill")
+                    }
+                FriendsListView()
+                    .tabItem {
+                        Image(systemName: "person.3")
+                    }
+                SetProfilePictureView()
+                    .tabItem {
+                        Image(systemName: "person.circle.fill")
+                    }
+            }
+        } else {
+            LaunchView()
+                .onAppear {
+                    authModel.listenToAuthState()
                 }
         }
     }

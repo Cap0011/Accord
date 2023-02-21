@@ -24,7 +24,7 @@ struct AccordApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LaunchView()
+            ContentView().environmentObject(AuthViewModel()).preferredColorScheme(.dark)
         }
     }
 }

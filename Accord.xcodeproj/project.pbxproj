@@ -33,6 +33,7 @@
 		C7C3D35D29A1520200F79098 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C7C3D35C29A1520200F79098 /* FirebaseAuth */; };
 		C7C3D35F29A1520200F79098 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C7C3D35E29A1520200F79098 /* FirebaseFirestoreSwift */; };
 		C7C3D36129A1520200F79098 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = C7C3D36029A1520200F79098 /* FirebaseFunctions */; };
+		C7C3D36329A542F300F79098 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3D36229A542F300F79098 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		C71B2BD6299A9A71002871F5 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		C71B2BD8299A9CAD002871F5 /* SetProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfilePictureView.swift; sourceTree = "<group>"; };
 		C7C3D35729A14E4C00F79098 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7C3D36229A542F300F79098 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				C71B2BA629914CDA002871F5 /* AccordApp.swift */,
 				C71B2BBA29914E2D002871F5 /* View */,
 				C71B2BCC299A8C88002871F5 /* Reusable */,
+				C7C3D36429A542F900F79098 /* ViewModel */,
 				C71B2BC9299A8AEF002871F5 /* Extension */,
 				C71B2BBD299A899B002871F5 /* Font */,
 				C71B2BAA29914CDB002871F5 /* Assets.xcassets */,
@@ -177,6 +180,14 @@
 				C703F00D299AA23E00572927 /* ProfilesView.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		C7C3D36429A542F900F79098 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C7C3D36229A542F300F79098 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 				C71B2BA929914CDA002871F5 /* ContentView.swift in Sources */,
 				C71B2BBC299A7988002871F5 /* LaunchView.swift in Sources */,
 				C71B2BCB299A8AFF002871F5 /* Font.swift in Sources */,
+				C7C3D36329A542F300F79098 /* AuthViewModel.swift in Sources */,
 				C71B2BCE299A8CA9002871F5 /* MyButton.swift in Sources */,
 				C71B2BD7299A9A71002871F5 /* LogInView.swift in Sources */,
 				C71B2BB529914DBD002871F5 /* MainView.swift in Sources */,

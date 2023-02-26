@@ -21,6 +21,7 @@ struct MySecureInputForm: View {
             if input.isEmpty {
                 Text(placeholder)
                     .padding(.leading, 10)
+                    .allowsHitTesting(false)
             }
         }
         .font(.montserrat(.medium, size: 12))

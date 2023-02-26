@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State var nickname: String
-    @State var password: String
+    @State private var nickname = ""
+    @State private var email = ""
+    @State private var password = ""
     
-    @State var isPasswordOpen = false
+    @State private var isPasswordOpen = false
+    @State private var isCreationSuccess = true
+    
+    @EnvironmentObject private var authModel: AuthViewModel
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -35,6 +39,13 @@ struct RegisterView: View {
                         .font(.montserrat(.regular, size: 12))
                         .padding(.top, 10)
                     
+                    Text("ACCOUNT INFORMATION")
+                        .font(.montserrat(.bold, size: 12))
+                        .padding(.top, 20)
+                    
+                    MyInputForm(input: $email, placeholder: "Email")
+                        .padding(.top, 10)
+                    
                     ZStack(alignment: .trailing) {
                         if isPasswordOpen {
                             MyInputForm(input: $password, placeholder: "Password")
@@ -51,19 +62,34 @@ struct RegisterView: View {
                                     .padding(.horizontal, 10)
                             }
                         }
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             isPasswordOpen.toggle()
                         }
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 10)
                     
                     Text("Password must be 6-72 characters")
                         .font(.montserrat(.regular, size: 12))
                         .padding(.top, 10)
                     
-                    MyButton(backgroundColorName: "Yellow", textColorName: "Blue", text: "Create an account")
-                        .padding(.top, 30)
-                    
+                    if nickname.isEmpty {
+                        MyButton(backgroundColorName: "BoxGrey", textColorName: "White", text: "Create an account")
+                            .padding(.top, 30)
+                    } else {
+                        // When creating account success
+                        MyButton(backgroundColorName: "Yellow", textColorName: "Blue", text: "Create an account")
+                            .padding(.top, 30)
+                            .onTapGesture {
+                                Task {
+                                    isCreationSuccess = await authModel.signUp(emailAddress: email, password: password)
+                                }
+                            }
+                            .navigationDestination(isPresented: $isCreationSuccess) {
+                                SetProfilePictureView()
+                            }
+                    }
+                        
                     Text("By registering, you agree to Accord’s Terms of Service and Privacy Policy.")
                         .font(.montserrat(.regular, size: 12))
                         .padding(.top, 10)
@@ -77,6 +103,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(nickname: "", password: "")
+        RegisterView()
     }
 }

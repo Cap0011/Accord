@@ -21,7 +21,7 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "person.3")
                     }
-                SetProfilePictureView()
+                ProfilesView()
                     .tabItem {
                         Image(systemName: "person.circle.fill")
                     }

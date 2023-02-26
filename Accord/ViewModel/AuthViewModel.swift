@@ -27,12 +27,33 @@ final class AuthViewModel: ObservableObject {
     func signUp(
         emailAddress: String,
         password: String
-    ) {
-        Auth.auth().createUser(withEmail: emailAddress, password: password) { result, error in
-            if let error = error {
-                print("An error occured: \(error.localizedDescription)")
-                return
-            }
+    ) async -> Bool {
+        do {
+            try await Auth.auth().createUser(withEmail: emailAddress, password: password)
+            return true
+        } catch {
+            print("An error occured: \(error.localizedDescription)")
+            return false
+        }
+//        Auth.auth().createUser(withEmail: emailAddress, password: password) { result, error in
+//            if let error = error {
+//                print("An error occured: \(error.localizedDescription)")
+//                isSuccess = false
+//                return
+//            }
+//        }
+    }
+    
+    func signIn(
+        emailAddress: String,
+        password: String
+    ) async -> Bool {
+        do {
+            try await Auth.auth().signIn(withEmail: emailAddress, password: password)
+            return true
+        } catch {
+            print("An error occured: \(error.localizedDescription)")
+            return false
         }
     }
     

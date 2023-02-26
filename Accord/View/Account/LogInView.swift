@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct LogInView: View {
-    @State var email: String
-    @State var password: String
+    @State private var email = ""
+    @State private var password = ""
     
-    @State var isPasswordOpen = false
+    @State private var isPasswordOpen = false
+    @State private var isLogInSuccess = false
+    
+    @EnvironmentObject private var authModel: AuthViewModel
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -51,6 +54,7 @@ struct LogInView: View {
                                     .padding(.horizontal, 10)
                             }
                         }
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             isPasswordOpen.toggle()
                         }
@@ -67,6 +71,12 @@ struct LogInView: View {
                     
                     MyButton(backgroundColorName: "Yellow", textColorName: "Blue", text: "Log In")
                         .padding(.top, 30)
+                        .onTapGesture {
+                            // Log In
+                            Task {
+                                isLogInSuccess = await authModel.signIn(emailAddress: email, password: password)
+                            }
+                        }
                 }
                 .padding(.horizontal, 20)
             }
@@ -77,6 +87,6 @@ struct LogInView: View {
 
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInView(email: "", password: "")
+        LogInView()
     }
 }

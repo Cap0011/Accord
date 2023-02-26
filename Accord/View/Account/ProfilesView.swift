@@ -16,6 +16,8 @@ struct ProfilesView: View {
     @State private var nickname: String?
     @State private var number: String?
     
+    @EnvironmentObject private var authModel: AuthViewModel
+    
     var body: some View {
         ZStack(alignment: .top) {
             Color("Blue").ignoresSafeArea()
@@ -54,6 +56,16 @@ struct ProfilesView: View {
                 .foregroundColor(.white)
                 .font(.montserrat(.bold, size: 24))
                 .padding(.top, 30)
+                
+                Spacer()
+                
+                MyButton(backgroundColorName: "BoxGrey", textColorName: "White", text: "Log Out")
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 20)
+                    .onTapGesture {
+                        // Log Out
+                        authModel.signOut()
+                    }
             }
         }
         .onChange(of: selectedItem) { newItem in

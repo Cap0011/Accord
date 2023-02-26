@@ -13,6 +13,8 @@ struct SetProfilePictureView: View {
     @State private var selectedItem: PhotosPickerItem?
     @State private var selectedImageData: Data?
     
+    @EnvironmentObject private var authModel: AuthViewModel
+    
     var body: some View {
         ZStack {
             Color("Blue").ignoresSafeArea()
@@ -55,6 +57,14 @@ struct SetProfilePictureView: View {
                 MyButton(backgroundColorName: "Yellow", textColorName: "Blue", text: "Next")
             }
             .padding(.horizontal, 20)
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                NavigationLink(destination: MainView()) {
+                    Text("Skip")
+                }
+            }
         }
         .onChange(of: selectedItem) { newItem in
             Task {

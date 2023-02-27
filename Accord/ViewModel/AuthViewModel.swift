@@ -35,13 +35,6 @@ final class AuthViewModel: ObservableObject {
             print("An error occured: \(error.localizedDescription)")
             return false
         }
-//        Auth.auth().createUser(withEmail: emailAddress, password: password) { result, error in
-//            if let error = error {
-//                print("An error occured: \(error.localizedDescription)")
-//                isSuccess = false
-//                return
-//            }
-//        }
     }
     
     func signIn(

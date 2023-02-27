@@ -34,6 +34,8 @@
 		C7C3D35F29A1520200F79098 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C7C3D35E29A1520200F79098 /* FirebaseFirestoreSwift */; };
 		C7C3D36129A1520200F79098 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = C7C3D36029A1520200F79098 /* FirebaseFunctions */; };
 		C7C3D36329A542F300F79098 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3D36229A542F300F79098 /* AuthViewModel.swift */; };
+		C7C3D36629AD0C0800F79098 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3D36529AD0C0800F79098 /* StorageManager.swift */; };
+		C7C3D36929AD0FF200F79098 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C7C3D36829AD0FF200F79098 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,7 @@
 		C71B2BD8299A9CAD002871F5 /* SetProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfilePictureView.swift; sourceTree = "<group>"; };
 		C7C3D35729A14E4C00F79098 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7C3D36229A542F300F79098 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C7C3D36529AD0C0800F79098 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 				C7C3D35B29A1520200F79098 /* FirebaseAnalyticsSwift in Frameworks */,
 				C7C3D35D29A1520200F79098 /* FirebaseAuth in Frameworks */,
 				C7C3D35F29A1520200F79098 /* FirebaseFirestoreSwift in Frameworks */,
+				C7C3D36929AD0FF200F79098 /* FirebaseStorage in Frameworks */,
 				C7C3D36129A1520200F79098 /* FirebaseFunctions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +97,7 @@
 			children = (
 				C71B2BA529914CDA002871F5 /* Accord */,
 				C71B2BA429914CDA002871F5 /* Products */,
+				C7C3D36729AD0FF200F79098 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,8 +191,16 @@
 			isa = PBXGroup;
 			children = (
 				C7C3D36229A542F300F79098 /* AuthViewModel.swift */,
+				C7C3D36529AD0C0800F79098 /* StorageManager.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C7C3D36729AD0FF200F79098 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +224,7 @@
 				C7C3D35C29A1520200F79098 /* FirebaseAuth */,
 				C7C3D35E29A1520200F79098 /* FirebaseFirestoreSwift */,
 				C7C3D36029A1520200F79098 /* FirebaseFunctions */,
+				C7C3D36829AD0FF200F79098 /* FirebaseStorage */,
 			);
 			productName = Accord;
 			productReference = C71B2BA329914CDA002871F5 /* Accord.app */;
@@ -290,6 +304,7 @@
 				C703F011299AA62B00572927 /* FriendRequestView.swift in Sources */,
 				C71B2BA729914CDA002871F5 /* AccordApp.swift in Sources */,
 				C71B2BD9299A9CAD002871F5 /* SetProfilePictureView.swift in Sources */,
+				C7C3D36629AD0C0800F79098 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +547,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C7C3D35929A1520200F79098 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFunctions;
+		};
+		C7C3D36829AD0FF200F79098 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7C3D35929A1520200F79098 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

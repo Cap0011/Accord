@@ -17,15 +17,22 @@ struct ProfilesView: View {
     @State private var number: String?
     
     @EnvironmentObject private var authModel: AuthViewModel
+    @StateObject var storageManager = StorageManager()
     
     var body: some View {
         ZStack(alignment: .top) {
             Color("Blue").ignoresSafeArea()
             
             VStack {
-                PhotosPicker(selection: $selectedItem, matching: .images, photoLibrary: .shared()) {
-                    ZStack(alignment: .topTrailing) {
-                        if let selectedImageData, let uiImage = UIImage(data: selectedImageData) {
+                ZStack(alignment: .topTrailing) {
+                    if let selectedImageData, let uiImage = UIImage(data: selectedImageData) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 180, height: 180)
+                            .cornerRadius(90)
+                    } else {
+                        if let imageData = storageManager.profileImageData, let uiImage = UIImage(data: imageData) {
                             Image(uiImage: uiImage)
                                 .resizable()
                                 .scaledToFill()
@@ -37,14 +44,15 @@ struct ProfilesView: View {
                                 .opacity(0.2)
                                 .frame(width: 180, height: 180)
                         }
-                        
+                    }
+                    PhotosPicker(selection: $selectedItem, matching: .images, photoLibrary: .shared()) {
                         Image(systemName: "pencil.circle.fill")
                             .font(.system(size: 40))
                             .foregroundColor(Color("Yellow"))
                     }
                 }
                 .padding(.top, 60)
-                
+
                 HStack(spacing: 0) {
                     Text(authModel.user?.displayName ?? "VI")
                     Text(" #")
@@ -56,6 +64,9 @@ struct ProfilesView: View {
                 .foregroundColor(.white)
                 .font(.montserrat(.bold, size: 24))
                 .padding(.top, 30)
+                .onTapGesture {
+                    print(storageManager.profileImageData?.isEmpty)
+                }
                 
                 Spacer()
                 
@@ -70,6 +81,7 @@ struct ProfilesView: View {
         }
         .task {
             await authModel.reloadUser()
+            storageManager.download(imageURL: authModel.user?.photoURL)
         }
         .onChange(of: selectedItem) { newItem in
             Task {

@@ -18,6 +18,7 @@ struct SetProfilePictureView: View {
     @State private var selectedImageData: Data?
     
     @EnvironmentObject private var authModel: AuthViewModel
+    var storageManager = StorageManager()
     
     @State private var isUpdatingSuccess = false
     
@@ -64,7 +65,7 @@ struct SetProfilePictureView: View {
                     .onTapGesture {
                         Task {
                             await authModel.signUp(emailAddress: email, password: password)
-                            await authModel.updateProfile(nickname: nickname, imageURL: nil)
+                            await authModel.updateProfile(nickname: nickname, imageURL: storageManager.upload(data: selectedImageData))
                         }
                     }
             }

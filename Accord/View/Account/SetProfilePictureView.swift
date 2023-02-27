@@ -10,10 +10,16 @@ import Photos
 import PhotosUI
 
 struct SetProfilePictureView: View {
+    let nickname: String
+    let email: String
+    let password: String
+    
     @State private var selectedItem: PhotosPickerItem?
     @State private var selectedImageData: Data?
     
     @EnvironmentObject private var authModel: AuthViewModel
+    
+    @State private var isUpdatingSuccess = false
     
     var body: some View {
         ZStack {
@@ -54,7 +60,13 @@ struct SetProfilePictureView: View {
                 
                 Spacer()
                 
-                MyButton(backgroundColorName: "Yellow", textColorName: "Blue", text: "Next")
+                MyButton(backgroundColorName: "Yellow", textColorName: "Blue", text: "DONE")
+                    .onTapGesture {
+                        Task {
+                            await authModel.signUp(emailAddress: email, password: password)
+                            await authModel.updateProfile(nickname: nickname, imageURL: nil)
+                        }
+                    }
             }
             .padding(.horizontal, 20)
         }
@@ -78,6 +90,6 @@ struct SetProfilePictureView: View {
 
 struct SetProfilePictureView_Previews: PreviewProvider {
     static var previews: some View {
-        SetProfilePictureView()
+        SetProfilePictureView(nickname: "HZA", email: "email@email", password: "thisismypassword")
     }
 }

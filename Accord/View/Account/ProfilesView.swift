@@ -46,7 +46,7 @@ struct ProfilesView: View {
                 .padding(.top, 60)
                 
                 HStack(spacing: 0) {
-                    Text(nickname ?? "VI")
+                    Text(authModel.user?.displayName ?? "VI")
                     Text(" #")
                     Text(String(number ?? "1105"))
                     
@@ -67,6 +67,9 @@ struct ProfilesView: View {
                         authModel.signOut()
                     }
             }
+        }
+        .task {
+            await authModel.reloadUser()
         }
         .onChange(of: selectedItem) { newItem in
             Task {

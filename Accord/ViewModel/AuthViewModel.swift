@@ -64,4 +64,30 @@ final class AuthViewModel: ObservableObject {
             print("Error signing out: %@", signOutError)
         }
     }
+    
+    func updateProfile(
+        nickname: String,
+        imageURL: URL?
+    ) async -> Bool {
+        do {
+            let changeRequest = user?.createProfileChangeRequest()
+            changeRequest?.displayName = nickname
+            changeRequest?.photoURL = imageURL
+            try await changeRequest?.commitChanges()
+            return true
+        } catch {
+            print("An error occured: \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    @MainActor func reloadUser() async {
+        do {
+            try await Auth.auth().currentUser?.reload()
+            self.user = Auth.auth().currentUser
+        } catch {
+            print("An error occured: \(error.localizedDescription)")
+            return
+        }
+    }
 }

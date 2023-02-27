@@ -13,8 +13,7 @@ struct RegisterView: View {
     @State private var password = ""
     
     @State private var isPasswordOpen = false
-    @State private var isCreationSuccess = true
-    
+
     @EnvironmentObject private var authModel: AuthViewModel
     
     var body: some View {
@@ -77,17 +76,10 @@ struct RegisterView: View {
                         MyButton(backgroundColorName: "BoxGrey", textColorName: "White", text: "Create an account")
                             .padding(.top, 30)
                     } else {
-                        // When creating account success
-                        MyButton(backgroundColorName: "Yellow", textColorName: "Blue", text: "Create an account")
-                            .padding(.top, 30)
-                            .onTapGesture {
-                                Task {
-                                    isCreationSuccess = await authModel.signUp(emailAddress: email, password: password)
-                                }
-                            }
-                            .navigationDestination(isPresented: $isCreationSuccess) {
-                                SetProfilePictureView()
-                            }
+                        NavigationLink(destination: SetProfilePictureView(nickname: nickname, email: email, password: password)) {
+                            MyButton(backgroundColorName: "Yellow", textColorName: "Blue", text: "Create an account")
+                                .padding(.top, 30)
+                        }
                     }
                         
                     Text("By registering, you agree to Accord’s Terms of Service and Privacy Policy.")
